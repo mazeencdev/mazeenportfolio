@@ -22,7 +22,7 @@ export default function Nav() {
       </div>
 
       <div className="flex items-center gap-2 mt-1">
-        <span className="status-dot bg-[#24ff7b]" />
+        <span className="status-dot" />
         <span className="text-xs" style={{ color: "var(--muted)" }}>
           available
         </span>

@@ -164,7 +164,7 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--red);
+  background: #24ff7b;
   display: inline-block;
   animation: pulse-red 2s ease-in-out infinite;
 }
