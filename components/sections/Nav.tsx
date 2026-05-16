@@ -4,7 +4,10 @@ export default function Nav() {
   return (
     <header className="max-w-2xl mx-auto px-6 pt-12 pb-2 flex items-start justify-between">
       <div>
-        <h1 className="text-xl font-semibold tracking-tight" style={{ color: "var(--text)" }}>
+        <h1
+          className="text-xl font-semibold tracking-tight"
+          style={{ color: "var(--text)" }}
+        >
           {HERO.name}
         </h1>
         <div className="flex items-center gap-3 mt-1">
@@ -20,7 +23,7 @@ export default function Nav() {
 
       <div className="flex items-center gap-2 mt-1">
         <span className="status-dot" />
-        <span className="text-xs" style={{ color: "var(--muted)" }}>
+        <span className="text-xs" style={{ color: "#24ff7b" }}>
           available
         </span>
       </div>
