@@ -39,7 +39,7 @@ export const PROJECTS = [
     description: "habit tracker to help you build a new and improved future and lifestyle.",
     tags: ["habits", "lifestyle", "Next.js"],
     emoji: "✦",
-    year: "2025",
+    year: "2026",
     url: "https://momentum-habits-app.vercel.app/",
   },
 
