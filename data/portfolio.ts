@@ -17,15 +17,6 @@ export const EXPERIENCE = [
     description: "Creating a new and improved system to help hospital staff deal with less paperwork and help more patients.",
     active: true,
   },
-  {
-    company: "Synk",
-    url: "#",
-    role: "Software Engineer",
-    period: "Jan 2026 – Apr 2026",
-    description: "Worked on an unreleased dashboard using Next.js, Prisma, and Supabase and designing beautiful pages.",
-    active: false,
-  },
-
 ];
 
 export const PROJECTS = [
@@ -71,7 +62,7 @@ export const TOOLS = [
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn",  url: "https://www.linkedin.com/in/mazeenc/" },
-  { label: "Resume",   url: "/mazeen_resume.pdf" },
+  { label: "Resume",   url: "/mazeenc_resume.pdf" },
   { label: "Email",     url: "mailto:mazeencdev@gmail.com" },
 ];
 
