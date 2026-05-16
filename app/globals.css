@@ -1,26 +1,175 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:       #0c0c0c;
+  --text:     #e2e2e2;
+  --muted:    #666666;
+  --subtle:   #333333;
+  --red:      #dc2626;
+  --red-dim:  rgba(220, 38, 38, 0.08);
+  --red-mid:  rgba(220, 38, 38, 0.18);
+  --surface:  #131313;
+  --border:   #1e1e1e;
+  --border-2: #2a2a2a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ─── Section label ────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.section-icon {
+  font-size: 14px;
+  background: var(--red-mid);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-radius: 8px;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Links ────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.link-red:hover {
+  color: var(--red);
+}
+
+.link-underline {
+  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-color: var(--border-2);
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+.link-underline:hover {
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
+
+/* ─── Tags ─────────────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  color: var(--muted);
+}
+
+/* ─── Project card ─────────────────────────────────────────── */
+.project-card {
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+  transition: padding-left 0.2s ease;
+  cursor: pointer;
+}
+.project-card:first-child { border-top: 1px solid var(--border); }
+.project-card:hover { padding-left: 6px; }
+.project-card:hover .project-arrow { color: var(--red); }
+.project-card:hover .project-title { color: var(--red); }
+
+.project-title {
+  transition: color 0.15s ease;
+}
+
+.project-arrow {
+  color: var(--muted);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.project-card:hover .project-arrow {
+  transform: translateX(3px);
+}
+
+/* ─── Experience row ───────────────────────────────────────── */
+.exp-row {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  transition: padding-left 0.2s ease;
+}
+.exp-row:first-child { border-top: 1px solid var(--border); }
+.exp-row:hover { padding-left: 6px; }
+.exp-row:hover .exp-company { color: var(--red); }
+
+.exp-company {
+  transition: color 0.15s ease;
+}
+
+/* ─── Testimonial card ─────────────────────────────────────── */
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  min-width: 320px;
+  max-width: 380px;
+  flex-shrink: 0;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--subtle); border-radius: 4px; }
+
+/* ─── Testimonial scroll ───────────────────────────────────── */
+.testimonial-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.testimonial-track::-webkit-scrollbar { display: none; }
+
+/* ─── Nav dot ──────────────────────────────────────────────── */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  display: inline-block;
+  animation: pulse-red 2s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50%       { opacity: 0.8; box-shadow: 0 0 0 5px rgba(220,38,38,0); }
 }
