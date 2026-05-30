@@ -42,6 +42,17 @@ export const PROJECTS = [
     year: "2026",
     url: "https://momentum-habits-app.vercel.app/",
   },
+  {
+    id: 3,
+    slug: "simplifi",
+    title: "Simplifi",
+    label: "helping to manage your finances",
+    description: "budgeting app to help you build towards financial freedom.",
+    tags: ["budget", "lifestyle", "finances", "w.i.p.", "app dev"],
+    emoji: "✦",
+    year: "2026",
+    url: "https://simplifiapp.vercel.app/",
+  },
 
 ];
 
