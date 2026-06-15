@@ -81,7 +81,7 @@ export const TOOLS = [
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn",  url: "https://www.linkedin.com/in/mazeenc/" },
-  { label: "Resume",   url: "/mazeencresume.pdf" },
+  { label: "Resume",   url: "/MCResume.pdf" },
   { label: "Email",     url: "mailto:mazeencdev@gmail.com" },
 ];
 
