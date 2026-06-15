@@ -17,6 +17,14 @@ export const EXPERIENCE = [
     description: "Creating a new and improved system to help hospital staff deal with less paperwork and help more patients.",
     active: true,
   },
+  {
+    company: "NGAITA",
+    url: "#",
+    role: "Full Stack Software Engineer",
+    period: "June 2026 – present",
+    description: "Create websites for external companies, asking clients what they want, using the Frappe system, designing and developing the websites alongside a team of web engineers.",
+    active: true,
+  },
 ];
 
 export const PROJECTS = [
