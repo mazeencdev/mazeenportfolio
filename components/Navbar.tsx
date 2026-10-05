@@ -1,57 +1,24 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {
-  Code2,
-  Briefcase,
-  FolderGit2,
-  GraduationCap,
-  Mail,
-} from "lucide-react";
+import { Download, Menu } from "lucide-react";
 
 export default function Navbar() {
-  const pathname = usePathname();
-
-  const navItems = [
-    { name: "Home", href: "/", icon: Code2 },
-    { name: "Experience", href: "/experience", icon: Briefcase },
-    { name: "Projects", href: "/projects", icon: FolderGit2 },
-    { name: "Skills", href: "/skills", icon: GraduationCap },
-    { name: "Contact", href: "/contact", icon: Mail },
+  const links = [
+    { label: "Work", href: "#work" },
+    { label: "Experience", href: "#experience" },
+    { label: "About", href: "#about" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-borderDark">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-bold text-lg text-white tracking-wider flex items-center gap-2"
-        >
-          <span className="w-3 h-3 rounded-full bg-accentBlue"></span>
-          MC
-        </Link>
-        <nav className="flex gap-1 md:gap-4">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                  isActive
-                    ? "bg-accentBlue/10 text-accentBlue border border-accentBlue/30"
-                    : "text-slate-400 hover:text-white hover:bg-cardBg"
-                }`}
-              >
-                <Icon size={16} />
-                <span className="hidden sm:inline">{item.name}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
+    <header className="site-header">
+      <nav className="nav-shell" aria-label="Primary navigation">
+        <a href="#top" className="wordmark" aria-label="Mazeen Chawdhury, home">
+          <span className="wordmark-mark">M</span><span>Mazeen.</span>
+        </a>
+        <div className="nav-links">
+          {links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+        </div>
+        <a className="nav-resume" href="/MCResume.pdf" target="_blank" rel="noreferrer"><Download size={14} strokeWidth={1.8} /><span>Résumé</span></a>
+        <a className="nav-menu" href="#work" aria-label="Jump to work"><Menu size={19} /></a>
+      </nav>
     </header>
   );
 }

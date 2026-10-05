@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mazeen Chawdhury - Portfolio",
-  description: "Software Engineer & CS Student Portfolio",
+  title: "Mazeen Chawdhury — Full-stack engineer",
+  description: "Portfolio of Mazeen Chawdhury, a full-stack engineer and designer in New York City.",
 };
 
 export default function RootLayout({
@@ -14,12 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-darkBg text-slate-100 min-h-screen flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+      <body>
         <Navbar />
-        <main className="flex-grow">{children}</main>
-        <footer className="py-6 text-center text-sm text-slate-500 border-t border-borderDark mt-12">
-          © {new Date().getFullYear()} Mazeen Chawdhury. All rights reserved.
-        </footer>
+        <main>{children}</main>
       </body>
     </html>
   );
