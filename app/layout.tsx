@@ -1,36 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/Navbar";
+import type { Metadata } from "node_modules/next/types";
 
 export const metadata: Metadata = {
-  title: "mazeen",
-  description: "fullstack engineer",
-  icons: {
-    icon: "/mazfavicon.png",
-  },
+  title: "Mazeen Chawdhury - Portfolio",
+  description: "Software Engineer & CS Student Portfolio",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body className="bg-darkBg text-slate-100 min-h-screen flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <footer className="py-6 text-center text-sm text-slate-500 border-t border-borderDark mt-12">
+          © {new Date().getFullYear()} Mazeen Chawdhury. All rights reserved.
+        </footer>
+      </body>
     </html>
   );
 }
