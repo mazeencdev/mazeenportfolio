@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import type { Metadata } from "node_modules/next/types";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mazeen Chawdhury - Portfolio",

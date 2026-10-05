@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { GraduationCap, Cpu } from "lucide-react";
 
 const skills = [
@@ -34,33 +37,49 @@ export default function SkillsPage() {
     <div className="max-w-4xl mx-auto px-6 py-12 space-y-12">
       {/* Skills Section */}
       <div>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-accentBlue/10 text-accentBlue rounded-xl border border-accentBlue/20">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="flex items-center gap-3 mb-6"
+        >
+          <div className="p-3 bg-accentBlue/10 text-accentBlue rounded-xl border border-accentBlue/30 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
             <Cpu size={24} />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Technical Skills</h1>
             <p className="text-sm text-slate-400">
-              Frameworks, languages, and technical competencies
+              Frameworks, languages, and competencies
             </p>
           </div>
-        </div>
+        </motion.div>
+
         <div className="flex flex-wrap gap-3">
           {skills.map((skill, index) => (
-            <span
+            <motion.span
               key={index}
-              className="bg-cardBg border border-borderDark text-slate-200 px-4 py-2 rounded-xl text-sm font-medium shadow-sm"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.03 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-cardBg border border-borderDark text-slate-200 px-4 py-2 rounded-xl text-sm font-medium shadow-sm hover:border-accentBlue/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all cursor-default"
             >
               {skill}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>
 
       {/* Education Section */}
       <div>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-accentBlue/10 text-accentBlue rounded-xl border border-accentBlue/20">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="flex items-center gap-3 mb-6"
+        >
+          <div className="p-3 bg-accentBlue/10 text-accentBlue rounded-xl border border-accentBlue/30 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
             <GraduationCap size={24} />
           </div>
           <div>
@@ -69,12 +88,17 @@ export default function SkillsPage() {
               Academic background and qualifications
             </p>
           </div>
-        </div>
+        </motion.div>
+
         <div className="space-y-4">
           {education.map((edu, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-cardBg border border-borderDark p-6 rounded-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              whileHover={{ scale: 1.01 }}
+              className="bg-cardBg border border-borderDark p-6 rounded-2xl hover:border-accentBlue/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all"
             >
               <span className="text-xs font-semibold text-accentBlue">
                 {edu.period}
@@ -83,7 +107,7 @@ export default function SkillsPage() {
                 {edu.degree}
               </h3>
               <p className="text-slate-400 text-sm">{edu.institution}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
