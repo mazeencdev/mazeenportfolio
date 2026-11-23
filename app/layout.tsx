@@ -9,7 +9,6 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   title: "Mazeen Chawdhury — Full-stack engineer",
   description: "Portfolio of Mazeen Chawdhury, a full-stack engineer and designer in New York City.",
-  icons: { icon: "/mazfavicon.png" },
 };
 
 export default function RootLayout({
