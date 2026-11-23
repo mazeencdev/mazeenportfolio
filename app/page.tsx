@@ -1,15 +1,20 @@
-import { ArrowUpRight, Download, MapPin, MoveDownRight } from "lucide-react";
-import { EXPERIENCE, PROJECTS, SOCIAL_LINKS, TOOLS } from "@/data/portfolio";
+import Hero from "@/components/Hero";
+import Mission from "@/components/Mission";
+import Work from "@/components/Work";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <div id="top">
-      <section className="hero page-width"><div className="hero-kicker"><span /> Available for select collaborations</div><p className="hero-index">01 — 04</p><h1>I build digital<br /><em>experiences</em> with intent.</h1><div className="hero-bottom"><p className="hero-intro">Mazeen Chawdhury is a full-stack engineer and designer in New York, focused on useful products that feel as good as they work.</p><a href="#work" className="circle-action" aria-label="See selected work"><MoveDownRight size={24} strokeWidth={1.5} /></a></div></section>
-      <section id="work" className="section page-width work-section"><div className="section-heading"><p className="eyebrow">Selected work</p><p className="section-note">A few ideas in motion — designed for the everyday, built for what&apos;s next.</p></div><div className="project-list">{PROJECTS.map((project, index) => <a key={project.id} className="project-row" href={project.url} target="_blank" rel="noreferrer"><span className="project-number">0{index + 1}</span><div className="project-main"><h2>{project.title}</h2><p>{project.description}</p></div><div className="project-meta"><span>{project.year}</span><span>{project.label}</span></div><ArrowUpRight className="project-arrow" size={23} strokeWidth={1.5} /></a>)}</div></section>
-      <section id="experience" className="section page-width experience-section"><div className="section-heading"><p className="eyebrow">Experience</p><p className="section-note">Currently building in healthcare and on the web.</p></div><div className="experience-list">{EXPERIENCE.map((experience) => <article className="experience-row" key={experience.company}><p className="experience-period">{experience.period}</p><div><h3>{experience.role} <span>— {experience.company}</span></h3><p>{experience.description}</p></div></article>)}</div></section>
-      <section id="about" className="about-section"><div className="page-width about-grid"><div><p className="eyebrow">A little more</p><h2>Curious by nature.<br />Precise by practice.</h2></div><div className="about-copy"><p>I&apos;m a Computer Science student at Manhattan University with a soft spot for the small details that make a product memorable. I like turning ambitious ideas into calm, clear interfaces.</p><div className="location-line"><MapPin size={16} /> Based in New York City</div></div></div><div className="tool-strip" aria-label="Tools and technologies">{[...TOOLS, ...TOOLS].map((tool, index) => <span key={`${tool}-${index}`}>{tool}</span>)}</div></section>
-      <section className="contact-section page-width"><p className="eyebrow">Let&apos;s make something</p><h2>Have an idea worth<br /><em>building?</em></h2><a className="email-link" href="mailto:mazeencdev@gmail.com">mazeencdev@gmail.com <ArrowUpRight size={25} strokeWidth={1.5} /></a></section>
-      <footer className="page-width site-footer"><p>© {new Date().getFullYear()} Mazeen Chawdhury</p><div>{SOCIAL_LINKS.map((link) => <a key={link.label} href={link.url} target={link.url.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{link.label}</a>)}</div><a href="/MCResume.pdf" target="_blank" rel="noreferrer" className="footer-resume"><Download size={14} /> Résumé</a></footer>
-    </div>
+    <>
+      <div className="ambient" aria-hidden="true" />
+      <Hero />
+      <Mission />
+      <Work />
+      <Skills />
+      <Experience />
+      <Contact />
+    </>
   );
 }

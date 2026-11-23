@@ -13,55 +13,63 @@ export const EXPERIENCE = [
     company: "Cliniq",
     url: "#",
     role: "Founder",
-    period: "May 2026 – present",
+    period: "August 2026 – present",
     description: "Creating a new and improved system to help hospital staff deal with less paperwork and help more patients.",
     active: true,
   },
   {
-    company: "NGAITA",
+    company: "Payly",
     url: "#",
-    role: "Full Stack Software Engineer",
-    period: "June 2026 – present",
-    description: "Create websites for external companies, asking clients what they want, using the Frappe system, designing and developing the websites alongside a team of web engineers.",
+    role: "Founder",
+    period: "August 2026 – present",
+    description: "Building a payment platform for small businesses: invoices, online receipts, and one-time, recurring and automatic payments in one place.",
     active: true,
   },
 ];
 
-export const PROJECTS = [
+export type Project = {
+  id: number;
+  slug: string;
+  title: string;
+  label: string;
+  description: string;
+  tags: string[];
+  year: string;
+  /** Live link. Leave empty to show the card without a "Visit live site" link. */
+  url?: string;
+};
+
+export const PROJECTS: Project[] = [
   {
     id: 1,
-    slug: "aurevia",
-    title: "Aurevia",
-    label: "the new zillow",
-    description: "creating a new and improved user experience for buying, renting, and selling properties.",
-    tags: ["real estate", "next.js", "zillow api", "w.i.p."],
-    emoji: "",
+    slug: "city-world",
+    title: "City World Dealer Suite",
+    label: "built for City World Ford, Hyundai & Toyota",
+    description:
+      "Tracks sales rep and dealership performance, and uses AI to tell dealers which cars to prioritize moving based on how long they've been on the lot.",
+    tags: ["automotive", "analytics", "ai", "shipped"],
     year: "2026",
-    url: "https://aureviahomes.vercel.app/",
   },
   {
     id: 2,
-    slug: "momentum",
-    title: "Momentum",
-    label: "building a new lifestyle",
-    description: "habit tracker to help you build a new and improved future and lifestyle.",
-    tags: ["habits", "lifestyle", "Next.js"],
-    emoji: "✦",
+    slug: "payly",
+    title: "Payly",
+    label: "payments for small businesses",
+    description:
+      "Lets businesses generate invoices, send online receipts, and take one-time, recurring and automatic payments.",
+    tags: ["fintech", "payments", "invoicing"],
     year: "2026",
-    url: "https://momentum-habits-app.vercel.app/",
   },
   {
     id: 3,
-    slug: "simplifi",
-    title: "Simplifi",
-    label: "helping to manage your finances",
-    description: "budgeting app to help you build towards financial freedom.",
-    tags: ["budget", "lifestyle", "finances", "w.i.p.", "app dev"],
-    emoji: "✦",
+    slug: "exam-solver",
+    title: "Exam Solver",
+    label: "two models agree, or a third decides",
+    description:
+      "Students snap homework or exam questions, even at odd angles. ChatGPT and Gemini both answer; if they match, that's the answer, and if they don't, Claude makes the final call.",
+    tags: ["edtech", "openai", "gemini", "claude"],
     year: "2026",
-    url: "https://simplifiapp.vercel.app/",
   },
-
 ];
 
 export const TOOLS = [
@@ -84,6 +92,21 @@ export const SOCIAL_LINKS = [
   { label: "Resume",   url: "/MCResume.pdf" },
   { label: "Email",     url: "mailto:mazeencdev@gmail.com" },
 ];
+
+export const SKILL_GROUPS = [
+  { title: "Frontend", blurb: "Interfaces that feel calm and fast.", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer"] },
+  { title: "Backend & data", blurb: "Auth, databases and APIs that hold up.", items: ["PostgreSQL", "Prisma", "Supabase", "Clerk", "Python"] },
+  { title: "Design", blurb: "From first sketch to final pixel.", items: ["Figma", "Framer", "Blender"] },
+  { title: "AI & workflow", blurb: "LLMs wired into real products, shipped on schedule.", items: ["OpenAI", "Gemini", "Claude", "Linear", "Notion"] },
+];
+
+export const MISSION =
+  "I build software that removes friction from everyday life, from hospital paperwork to dealership lots and small-business payments, and I make sure it looks as good as it works.";
+
+export const ABOUT = {
+  school: "Computer Science student at Manhattan University",
+  location: "New York City",
+};
 
 export const NAV_LINKS     = [];
 export const BRANDS        = [{ name: "Cliniq", label: "Cliniq" }, { name: "Synk", label: "Synk" }];
