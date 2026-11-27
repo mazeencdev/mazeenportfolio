@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const LINKS = [
   { label: "Work", href: "#work" },
+  { label: "Side quests", href: "#side-quests" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
 ];
@@ -26,7 +27,7 @@ export default function Navbar() {
       },
       { rootMargin: "-45% 0px -50% 0px" },
     );
-    ["top", "work", "skills", "experience", "contact"].forEach((id) => {
+    ["top", "work", "side-quests", "skills", "experience", "contact"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });

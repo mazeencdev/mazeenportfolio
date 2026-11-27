@@ -1,10 +1,11 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Geist, Geist_Mono } from "next/font/google";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const hand = Caveat({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-hand" });
 
 export const metadata: Metadata = {
   title: "Mazeen Chawdhury — Full-stack engineer",
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable} ${hand.variable}`}>
       <body>
         <Navbar />
         <main>{children}</main>

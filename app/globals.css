@@ -340,3 +340,108 @@ em { font-style: normal; color: var(--accent); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
+
+/* ---------- side quests (deliberately different: road-trip / sticker vibe) ---------- */
+:root { --amber: #ffc35c; --amber-soft: rgba(255, 195, 92, 0.12); --sign: #17573f; --asphalt: #15181d; }
+.quests { padding: 130px 0 40px; scroll-margin-top: 70px; }
+.quests-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 56px; }
+.quests-head h2 { margin: 22px 0 0; font-size: clamp(38px, 5.4vw, 72px); line-height: 1; letter-spacing: -0.055em; font-weight: 500; }
+.tape {
+  display: inline-block; padding: 6px 18px 4px; font-family: var(--font-hand), cursive; font-size: 26px; font-weight: 700; line-height: 1;
+  color: #1d1405; background: var(--amber); box-shadow: 0 6px 20px -8px rgba(255, 195, 92, 0.6);
+  clip-path: polygon(2% 8%, 98% 0, 100% 88%, 3% 100%);
+}
+.scribble { position: relative; display: inline-block; color: var(--amber); }
+.scribble svg { position: absolute; left: -2%; bottom: -0.2em; width: 104%; height: 0.36em; overflow: visible; }
+.quests-note { margin: 0; max-width: 300px; color: var(--muted); font-size: 14px; }
+
+.quest { position: relative; border-radius: 34px; padding: clamp(24px, 4vw, 52px); overflow: hidden;
+  background:
+    radial-gradient(600px 400px at 85% 10%, rgba(255, 195, 92, 0.07), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.012) 0 2px, transparent 2px 14px),
+    var(--panel);
+  border: 1px dashed rgba(255, 195, 92, 0.22);
+}
+.quest-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+
+.gauge { width: 190px; margin-bottom: 18px; }
+.gauge-dial { width: 100%; display: block; overflow: visible; }
+.odometer { display: flex; align-items: center; gap: 3px; margin-top: 6px; font-family: var(--font-mono), monospace; }
+.odo-digit { position: relative; display: inline-grid; place-items: center; width: 20px; height: 28px; overflow: hidden; border-radius: 5px; font-size: 15px; color: var(--ink); background: #05070a; border: 1px solid var(--line-strong); }
+.odo-digit:nth-last-child(2) { color: #1d1405; background: var(--amber); border-color: var(--amber); }
+.odo-unit { margin-left: 6px; font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.12em; }
+
+.quest-kicker { margin: 0 0 8px; font-family: var(--font-mono), monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
+.quest-title { margin: 0; font-size: clamp(52px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.06em; font-weight: 600; }
+.quest-title a { position: relative; display: inline-flex; align-items: flex-start; gap: 10px; background: linear-gradient(var(--amber), var(--amber)) left 92% / 0% 4px no-repeat; transition: background-size 0.5s var(--ease), color 0.3s; }
+.quest-title a:hover { background-size: 100% 4px; color: #fff4dc; }
+.quest-title-gh { display: grid; place-items: center; width: 40px; height: 40px; margin-top: 8px; border-radius: 12px; color: var(--amber); background: var(--amber-soft); border: 1px solid rgba(255, 195, 92, 0.3); transform: rotate(-8deg) scale(0.9); transition: transform 0.4s var(--ease); }
+.quest-title a:hover .quest-title-gh { transform: rotate(6deg) scale(1.05); }
+.quest-tagline { margin: 10px 0 18px; font-family: var(--font-hand), cursive; font-size: 30px; font-weight: 600; color: var(--accent); transform: rotate(-2deg); transform-origin: left; }
+.quest-story { margin: 0 0 26px; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 420px; }
+.quest-story span { color: var(--ink); }
+.quest-cta { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 500; color: #1d1405; background: var(--amber); box-shadow: 0 4px 0 #b9822a; transition: transform 0.2s, box-shadow 0.2s; }
+.quest-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #b9822a; }
+.quest-cta:active { transform: translateY(3px); box-shadow: 0 1px 0 #b9822a; }
+
+.quest-stage { position: relative; padding: 26px 18px 34px; }
+.mac-window { position: relative; z-index: 1; border-radius: 14px; overflow: hidden; background: #0b0d11; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9), 0 0 0 6px rgba(255, 255, 255, 0.025); }
+.mac-bar { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; height: 38px; padding: 0 12px; background: linear-gradient(#1d2128, #16191f); border-bottom: 1px solid rgba(0, 0, 0, 0.6); }
+.lights { display: flex; gap: 7px; }
+.lights i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.lights i:nth-child(2) { background: #febc2e; }
+.lights i:nth-child(3) { background: #28c840; }
+.mac-title { text-align: center; font-size: 12px; color: #9aa3b0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mac-actions { display: flex; gap: 4px; }
+.mac-actions button { display: grid; place-items: center; width: 26px; height: 24px; border-radius: 7px; color: #c9d1dc; background: rgba(255, 255, 255, 0.06); transition: background 0.2s, color 0.2s; }
+.mac-actions button:hover { color: #1d1405; background: var(--amber); }
+.mac-progress { height: 2px; background: rgba(255, 255, 255, 0.05); }
+.mac-progress span { display: block; height: 100%; background: var(--amber); transform-origin: left; transition: transform 0.25s linear; }
+.mac-window video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #0b0d11; cursor: pointer; }
+
+.sticker {
+  position: absolute; z-index: 5; padding: 8px 14px; border-radius: 999px; cursor: grab; touch-action: none; user-select: none;
+  font-size: 13px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap;
+  box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.7), inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+.sticker-amber { background: var(--amber); color: #1d1405; }
+.sticker-ice { background: var(--accent-ice); color: #06223a; }
+.sticker-ink { background: #f4f1ea; color: #111; font-family: var(--font-hand), cursive; font-size: 20px; padding: 4px 14px; border-radius: 10px; }
+.sticker-hint { position: absolute; right: 22%; top: -12px; margin: 0; font-family: var(--font-hand), cursive; font-size: 20px; color: var(--faint); transform: rotate(-3deg); }
+
+.road-wrap { margin-top: 70px; }
+.signs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; align-items: end; }
+.sign { display: flex; flex-direction: column; align-items: center; }
+.sign-board { width: 100%; padding: 16px 16px 18px; border-radius: 12px; color: #eafff4; background: var(--sign); border: 2px solid rgba(255, 255, 255, 0.85); box-shadow: 0 0 0 4px var(--sign), 0 18px 30px -16px rgba(0, 0, 0, 0.8); transition: transform 0.35s var(--ease); }
+.sign:hover .sign-board { transform: rotate(-2deg) translateY(-4px); }
+.sign-mile { display: inline-block; margin-bottom: 10px; padding: 2px 8px; border-radius: 5px; font-family: var(--font-mono), monospace; font-size: 10.5px; letter-spacing: 0.14em; color: var(--sign); background: #eafff4; }
+.sign-mile b { font-weight: 700; }
+.sign h4 { margin: 0 0 6px; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
+.sign p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(234, 255, 244, 0.75); }
+.sign-post { width: 8px; height: 42px; background: linear-gradient(90deg, #6d747e, #b7bec8, #6d747e); border-radius: 0 0 2px 2px; }
+.road { position: relative; height: 64px; border-radius: 12px; background: var(--asphalt); border-top: 3px solid #2a2f37; border-bottom: 3px solid #2a2f37; }
+.road-dash { position: absolute; left: 0; right: 0; top: 50%; height: 4px; transform: translateY(-50%); background: repeating-linear-gradient(90deg, var(--amber) 0 34px, transparent 34px 68px); opacity: 0.8; animation: lane 1.4s linear infinite; }
+@keyframes lane { to { background-position: -68px 0; } }
+.car { position: absolute; top: 4px; margin-left: -32px; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.6)); }
+.car svg { display: block; }
+.road::before, .road::after { content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 14px, transparent 14px 20px); }
+.road::before { top: 6px; } .road::after { bottom: 6px; }
+
+@media (max-width: 1000px) {
+  .quest-grid { grid-template-columns: 1fr; }
+  .signs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .quests { padding-top: 88px; }
+  .quests-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+  .quest { border-radius: 26px; padding: 22px; }
+  .gauge { width: 150px; }
+  .quest-stage { padding: 20px 4px 34px; }
+  .sticker { font-size: 11px; padding: 6px 10px; }
+  .sticker-ink { font-size: 16px; }
+  .signs { grid-template-columns: 1fr; gap: 14px; }
+  .sign-post { display: none; }
+  .road-wrap { margin-top: 44px; }
+  .road { margin-top: 18px; height: 54px; }
+  .car svg { width: 52px; }
+}

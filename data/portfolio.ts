@@ -113,3 +113,25 @@ export const BRANDS        = [{ name: "Cliniq", label: "Cliniq" }, { name: "Synk
 export const POSTS         = [];
 export const FAQS          = [];
 export const FOOTER_COLUMNS = [];
+
+export const SIDE_PROJECTS = [
+  {
+    slug: "mileage",
+    title: "Mileage",
+    tagline: "Every dollar, further.",
+    kicker: "A budgeting app I built for myself",
+    story:
+      "I wanted a second car but couldn't answer a simple question: what would it actually cost me each month, given how I really spend? So I built a native Mac app to find out.",
+    repo: "https://github.com/mazeencdev/mileage",
+    video: "/mileage/demo.mp4",
+    poster: "/mileage/poster.jpg",
+    platform: "macOS 14+",
+    stickers: ["Swift", "SwiftUI", "Swift Charts", "made for me", "0 dependencies"],
+    markers: [
+      { title: "Weekly spending money", body: "Income minus bills and savings, turned into one number with a per-day pace." },
+      { title: "Read-only bank sync", body: "SimpleFIN pulls transactions in and auto-categorizes them, learning from my corrections." },
+      { title: "Second-car planner", body: "Loan, insurance, gas and upkeep, with a live verdict on what I can comfortably afford." },
+      { title: "Always within reach", body: "A menu bar item and a desktop widget showing what's left this week." },
+    ],
+  },
+];
