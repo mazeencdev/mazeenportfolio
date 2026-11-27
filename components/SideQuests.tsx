@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { ArrowUpRight, Pause, Play, Volume2, VolumeX } from "lucide-react";
-import { SIDE_PROJECTS } from "@/data/portfolio";
+import { MILEAGE } from "@/data/portfolio";
+import SnapQuest from "./SnapQuest";
 import { EASE } from "./Reveal";
 
-type Quest = (typeof SIDE_PROJECTS)[number];
+type Quest = typeof MILEAGE;
 
 const STICKER_SPOTS = [
   { top: "-6%", left: "-4%", rotate: -12, tone: "amber" },
@@ -325,9 +326,8 @@ export default function SideQuests() {
         <p className="quests-note">No clients and no deadlines. Just things I wanted to exist, so I made them.</p>
       </div>
 
-      {SIDE_PROJECTS.map((quest, i) => (
-        <QuestBlock key={quest.slug} quest={quest} index={i} />
-      ))}
+      <QuestBlock quest={MILEAGE} index={0} />
+      <SnapQuest index={1} />
     </section>
   );
 }

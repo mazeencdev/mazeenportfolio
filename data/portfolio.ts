@@ -114,24 +114,49 @@ export const POSTS         = [];
 export const FAQS          = [];
 export const FOOTER_COLUMNS = [];
 
-export const SIDE_PROJECTS = [
-  {
-    slug: "mileage",
-    title: "Mileage",
-    tagline: "Every dollar, further.",
-    kicker: "A budgeting app I built for myself",
-    story:
-      "I wanted a second car but couldn't answer a simple question: what would it actually cost me each month, given how I really spend? So I built a native Mac app to find out.",
-    repo: "https://github.com/mazeencdev/mileage",
-    video: "/mileage/demo.mp4",
-    poster: "/mileage/poster.jpg",
-    platform: "macOS 14+",
-    stickers: ["Swift", "SwiftUI", "Swift Charts", "made for me", "0 dependencies"],
-    markers: [
-      { title: "Weekly spending money", body: "Income minus bills and savings, turned into one number with a per-day pace." },
-      { title: "Read-only bank sync", body: "SimpleFIN pulls transactions in and auto-categorizes them, learning from my corrections." },
-      { title: "Second-car planner", body: "Loan, insurance, gas and upkeep, with a live verdict on what I can comfortably afford." },
-      { title: "Always within reach", body: "A menu bar item and a desktop widget showing what's left this week." },
-    ],
-  },
-];
+export const MILEAGE = {
+  slug: "mileage",
+  title: "Mileage",
+  tagline: "Every dollar, further.",
+  kicker: "A budgeting app I built for myself",
+  story:
+    "I wanted a second car but couldn't answer a simple question: what would it actually cost me each month, given how I really spend? So I built a native Mac app to find out.",
+  repo: "https://github.com/mazeencdev/mileage",
+  video: "/mileage/demo.mp4",
+  poster: "/mileage/poster.jpg",
+  platform: "macOS 14+",
+  stickers: ["Swift", "SwiftUI", "Swift Charts", "made for me", "0 dependencies"],
+  markers: [
+    { title: "Weekly spending money", body: "Income minus bills and savings, turned into one number with a per-day pace." },
+    { title: "Read-only bank sync", body: "SimpleFIN pulls transactions in and auto-categorizes them, learning from my corrections." },
+    { title: "Second-car planner", body: "Loan, insurance, gas and upkeep, with a live verdict on what I can comfortably afford." },
+    { title: "Always within reach", body: "A menu bar item and a desktop widget showing what's left this week." },
+  ],
+};
+
+export const SNAPNAMER = {
+  slug: "snapnamer",
+  title: "SnapNamer",
+  tagline: "Every screenshot, named.",
+  story:
+    "A tiny background app for macOS. Every screenshot I take is copied to my clipboard, read on-device with Apple's Vision framework, and filed with a name that says what it is.",
+  repo: "https://github.com/mazeencdev/snapnamer",
+  video: "/snapnamer/demo.mp4",
+  poster: "/snapnamer/poster.jpg",
+  platform: "macOS 13+",
+  stack: ["Swift", "AppKit", "Vision", "Dispatch", "launchd"],
+  // Fictional examples in SnapNamer's real naming format.
+  renames: [
+    { before: "Screenshot 2026-11-26 at 8.09.19 PM.png", stamp: "2026-11-26 at 20.09.19", app: "Safari", text: "Quarterly Sales Report - Revenue grew 24" },
+    { before: "Screenshot 2026-11-25 at 11.42.07 AM.png", stamp: "2026-11-25 at 11.42.07", app: "Figma", text: "Onboarding Flow v3" },
+    { before: "Screenshot 2026-11-24 at 3.15.52 PM.png", stamp: "2026-11-24 at 15.15.52", app: "Xcode", text: "Build Succeeded" },
+    { before: "Screenshot 2026-11-22 at 9.03.30 PM.png", stamp: "2026-11-22 at 21.03.30", app: "Notes", text: "Trip ideas - Lisbon" },
+  ],
+  features: [
+    { title: "Instant clipboard", body: "Copied the moment you take it, ready to paste." },
+    { title: "On-device OCR", body: "Vision reads the text. Nothing leaves your Mac." },
+    { title: "Names that say what it is", body: "Timestamp, the app you were in, and the biggest text." },
+    { title: "Searchable index", body: "A running _index.md plus Spotlight comments." },
+    { title: "Invisible", body: "A login agent. No Dock icon, no menu bar clutter." },
+  ],
+};
