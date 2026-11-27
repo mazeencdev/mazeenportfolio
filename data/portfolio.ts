@@ -160,3 +160,32 @@ export const SNAPNAMER = {
     { title: "Invisible", body: "A login agent. No Dock icon, no menu bar clutter." },
   ],
 };
+
+export const HAZE = {
+  slug: "haze",
+  title: "haze",
+  tagline: "Your calendar,",
+  taglineSoft: "but calmer.",
+  story:
+    "A native macOS calendar and to-do app with a soft, frosted-glass design. It syncs both ways with Apple Calendar and Reminders, so every account on my Mac just shows up.",
+  repo: "https://github.com/mazeencdev/haze",
+  video: "/haze/demo.mp4",
+  poster: "/haze/poster.jpg",
+  icon: "/haze/icon.png",
+  platform: "macOS 15+",
+  stack: ["Swift", "SwiftUI", "EventKit", "MapKit"],
+  upNext: [
+    { title: "Send Q4 budget to Sarah", tag: "Work", minutes: 24 },
+    { title: "Coffee with Ana", tag: "Personal", minutes: 52 },
+    { title: "Design review", tag: "Design", minutes: 95 },
+  ],
+  typing: { text: "Coffee with Ana tomorrow 9am", when: "Tomorrow", time: "9:00 AM", title: "Coffee with Ana" },
+  agenda: [
+    { time: "08:00", title: "Four ways to see your time", body: "Week, Month, Agenda and Places views, with a live now line and a focus mode.", tone: "sky" },
+    { time: "09:30", title: "Two-way sync", body: "Built on EventKit, so iCloud, Google and Exchange calendars sync on their own.", tone: "peach" },
+    { time: "11:00", title: "Drag to reschedule", body: "Events snap to 15-minute steps, with trackpad haptics and undo.", tone: "lilac" },
+    { time: "13:15", title: "Type it like you'd say it", body: "“Coffee with Ana tomorrow 9am” fills in the date and time for you.", tone: "sage" },
+    { time: "15:00", title: "Places that go somewhere", body: "Place search, map previews and one-click directions in Apple or Google Maps.", tone: "sky" },
+    { time: "17:45", title: "A sky that lives", body: "The background drifts and shifts colour with the time of day.", tone: "peach" },
+  ],
+};

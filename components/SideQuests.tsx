@@ -5,6 +5,7 @@ import { motion, useMotionValueEvent, useScroll, useSpring, useTransform, type M
 import { ArrowUpRight, Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { MILEAGE } from "@/data/portfolio";
 import SnapQuest from "./SnapQuest";
+import HazeQuest from "./HazeQuest";
 import { EASE } from "./Reveal";
 
 type Quest = typeof MILEAGE;
@@ -328,6 +329,7 @@ export default function SideQuests() {
 
       <QuestBlock quest={MILEAGE} index={0} />
       <SnapQuest index={1} />
+      <HazeQuest index={2} />
     </section>
   );
 }
